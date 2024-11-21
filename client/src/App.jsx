@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom"
-import AuthLayout from "./components/ui/auth/layout"
+import AuthLayout from "./components/auth/layout"
 import AuthLogin from "./pages/auth/auth/login"
 import AuthRegister from "./pages/auth/auth/register"
-import AdminLayout from "./components/ui/admin-view/layout"
-import AdminDashboard from "./pages/auth/admin-view/dashboard"
-import AdminOrders from "./pages/auth/admin-view/orders"
-import AdminProducts from "./pages/auth/admin-view/products"
-import AdminFeatures from "./pages/auth/admin-view/features"
+import AdminLayout from "./components/admin-view/layout"
+import AdminDashboard from "./pages/admin-view/dashboard"
+import AdminOrders from "./pages/admin-view/orders"
+import AdminProducts from "./pages/admin-view/products"
+import AdminFeatures from "./pages/admin-view/features"
 
 function App() {
    
