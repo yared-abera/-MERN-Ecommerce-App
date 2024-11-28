@@ -17,6 +17,7 @@ function AuthRegister() {
    function onSubmit() {
       
       }
+      console.log(formData);
 
     return (
 
