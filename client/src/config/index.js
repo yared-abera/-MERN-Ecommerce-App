@@ -9,7 +9,7 @@ export const registerFormControls=[
 {
     name: 'email',
     label: 'Email',
-    type: 'text',
+    type: 'email',
     placeholder: 'Enter your Email',
     componentType: 'input',   
 },
@@ -28,7 +28,7 @@ export const loginFormControls=[
     {
         name: 'email',
         label: 'Email',
-        type: 'text',
+        type: 'email',
         placeholder: 'Enter your Email',
         componentType: 'input',   
     },

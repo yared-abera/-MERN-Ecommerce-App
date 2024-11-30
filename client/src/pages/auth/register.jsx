@@ -3,6 +3,7 @@ import { useState } from "react"
 import CommonForm from "../../components/common/form"
 import { registerFormControls } from "../../config/index"
 import { useDispatch,  } from "react-redux"
+import { registerUser } from "../../store/auth-slice/index"
 
 
 const initialState = {

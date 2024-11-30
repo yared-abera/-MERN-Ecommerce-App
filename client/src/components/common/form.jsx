@@ -19,7 +19,7 @@ import { Button } from '../ui/button';
              id={getControlItem.name}
              type={getControlItem.type}
              value={value}
-             onchange={event=>setFormData({
+             onChange={event=>setFormData({
                ...formData,
                [getControlItem.name]:event.target.value
             })}
@@ -57,7 +57,7 @@ import { Button } from '../ui/button';
              placeholder={getControlItem.placeholder}
              id={getControlItem.name}
              value={value}
-             onchange={event=>setFormData({
+             onChange={event=>setFormData({
                ...formData,
                [getControlItem.name]:event.target.value
             })}
@@ -72,7 +72,7 @@ import { Button } from '../ui/button';
              id={getControlItem.name}
              type={getControlItem.type}
              value={value}
-             onchange={event=>setFormData({
+             onChange={event=>setFormData({
                ...formData,
                [getControlItem.name]:event.target.value
             })}
