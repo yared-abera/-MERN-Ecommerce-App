@@ -16,6 +16,8 @@ import ShoppingOrders from "./pages/shopping-view/orders"
 import ShoppingCheckout from "./pages/shopping-view/checkout"
 import CheckAuth from "./components/common/check-auth"
 import UnAuthPage from "./pages/unauth-page"
+import header from "./components/common/header"
+
 function App() {
     
    const isAuthenticated=false;
@@ -26,7 +28,7 @@ function App() {
   return (
      <div className="flex flex-col overflow-hidden bg-white">
         {/* common components */}
-         <h1>header</h1>
+          <header/>
         
         <Routes>
           <Route path="/auth" element={
