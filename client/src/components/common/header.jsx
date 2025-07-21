@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
-import { Heart, ShoppingCart, Scale, Search } from "lucide-react";
+import { Heart, ShoppingCart, Scale, Search,User } from "lucide-react";
 
 function Header() {
   return (
     <>
       {/* Top Notice Bar */}
-      <header className="bg-yellow-100 shadow-sm">
-        <div className="flex flex-col md:flex-row items-center justify-between px-6 py-2 text-sm text-gray-700">
+      <header className=  "w-full  bg-gray-100 shadow-sm ">
+        <div className="flex flex-col md:flex-row items-center justify-between px-6 py-5 text-sm text-gray-700">
           <div>
-            <p>
+            <p className='text-2xl font-bold'>
               Welcome to our Store,
-              <span className="font-semibold text-yellow-700"> Bruk Computer and Accessories</span> — Home of Laptops
+              <span className="  text-yellow-700"> Biruk Computer and Accessories Store</span> — Home of Laptops
             </p>
-            <p className="text-xs text-gray-600">
-              📍 Location: Addis Ababa, Meskel Square | 📞 Contact: +251-911-234567 | ✉️ brukshop@gmail.com
+            <p className="text-sm text-gray-600">
+              📍 Location: Mozambique St, Mexico, Addis Ababa | 📞 Contact: +251-915-121-927| ✉️ brukshop@gmail.com
             </p>
           </div>
           <div className="flex gap-4 mt-2 md:mt-0">
-            <Link to="#" className="text-blue-600 hover:underline">Track Order</Link>
-            <Link to="#" className="text-blue-600 hover:underline">Account</Link>
+             <Link to="#" className="text-blue-600 hover:underline text-md">Track Order</Link>
+             <Link to="#" className="flex text-blue-600 hover:underline text-md gap-1"><User size={18} /> Account</Link> 
           </div>
         </div>
 
@@ -27,7 +27,7 @@ function Header() {
           
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-yellow-500">
-            MyShop
+            Biruk Store
           </Link>
 
           {/* Search Bar */}
@@ -64,6 +64,41 @@ function Header() {
             </Link>
           </div>
         </div>
+         
+       <nav className="bg-yellow-400 shadow-md w-full">
+      <div className="container mx-auto w-full px-2  py-3 flex justify-between items-center">
+        <div className="w-1/4">
+          
+        </div>
+        {/* Navigation Links */}
+        <ul className="flex w-1/2 text-lg justify-around text-white font-medium text-sm">
+          <li>
+            <Link to="/" className="hover:underline hover:text-white/90">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/shop" className="hover:underline hover:text-white/90">
+              Shop
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="hover:underline hover:text-white/90">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="hover:underline hover:text-white/90">
+              Contact
+            </Link>
+          </li>
+        </ul>
+        <div className="w-1/4 text-center text-white text-md">
+          <p>Phone: +251-915-121-927</p>
+        </div>
+      </div>
+    </nav>
+         
       </header>
     </>
   );
