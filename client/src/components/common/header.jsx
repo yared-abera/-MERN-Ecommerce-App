@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { Heart, ShoppingCart, Scale, Search,User } from "lucide-react";
-
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 function Header() {
   return (
     <>
@@ -23,7 +29,7 @@ function Header() {
         </div>
 
         {/* Main Header */}
-        <div className="w-full bg-white shadow-md px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="w-full bg-white shadow-md  px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
           
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-yellow-500">
@@ -65,15 +71,28 @@ function Header() {
           </div>
         </div>
          
-       <nav className="bg-yellow-400 shadow-md w-full">
+       <nav className="bg-yellow-400 shadow-md  container mx-auto">
       <div className="container mx-auto w-full px-2  py-3 flex justify-between items-center">
-        <div className="w-1/4">
-          
+        <div className="w-1/4 flex items-center justify-center p-2">
+        <Select className=' border-none ' >
+    <SelectTrigger className=" text-md text-bold w-3/4 py-2 bg-white text-gray-700 hover:bg-yellow-50 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500">
+    <SelectValue   placeholder="Shop by Brand" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="light">HP</SelectItem>
+    <SelectItem value="dark">Microsoft</SelectItem>
+    <SelectItem value="system">Acer</SelectItem>
+    <SelectItem value="system">Lenovo</SelectItem>
+    <SelectItem value="system">Dell</SelectItem>
+    <SelectItem value="system">Apple</SelectItem>
+    <SelectItem value="system">Asus</SelectItem>
+  </SelectContent>
+</Select>
         </div>
         {/* Navigation Links */}
-        <ul className="flex w-1/2 text-lg justify-around text-white font-medium text-sm">
-          <li>
-            <Link to="/" className="hover:underline hover:text-white/90">
+        <ul className="flex w-1/2  text-lg justify-around font-medium  ">
+          <li className="">
+            <Link to="/" className="hover:underline   hover:text-white/90">
               Home
             </Link>
           </li>
@@ -93,7 +112,7 @@ function Header() {
             </Link>
           </li>
         </ul>
-        <div className="w-1/4 text-center text-white text-md">
+        <div className="w-1/4 text-center text-lg">
           <p>Phone: +251-915-121-927</p>
         </div>
       </div>

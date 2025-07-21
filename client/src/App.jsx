@@ -17,6 +17,7 @@ import ShoppingCheckout from "./pages/shopping-view/checkout"
 import CheckAuth from "./components/common/check-auth"
 import UnAuthPage from "./pages/unauth-page"
 import Header from "./components/common/header"
+import Footer from "./components/common/footer"
 
 function App() {
     
@@ -29,7 +30,7 @@ function App() {
      <div className="flex flex-col overflow-hidden bg-white">
         {/* common components */}
            <Header/>
-        
+            
         <Routes>
           
           <Route path="/auth" element={
@@ -70,7 +71,7 @@ function App() {
        <Route path="/unauth-page" element={< UnAuthPage/>} />
            
         </Routes>
-
+        <Footer/>
      </div>
   )
 }
