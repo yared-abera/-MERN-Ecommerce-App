@@ -18,6 +18,7 @@ import CheckAuth from "./components/common/check-auth"
 import UnAuthPage from "./pages/unauth-page"
 import Header from "./components/common/header"
 import Footer from "./components/common/footer"
+import Home from "./pages/home-view"
 
 function App() {
     
@@ -27,12 +28,12 @@ function App() {
       role:"user"};
 
   return (
-     <div className="flex flex-col overflow-hidden bg-white">
+     <div className="flex flex-col  bg-white">
         {/* common components */}
            <Header/>
             
         <Routes>
-          
+          <Route path="/" element={<Home />} />
           <Route path="/auth" element={
             <CheckAuth isAuthenticated={isAuthenticated} user={user}>
             <AuthLayout />

@@ -28,8 +28,12 @@ function Header() {
           </div>
         </div>
 
-        {/* Main Header */}
-        <div className="w-full bg-white shadow-md  px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+        
+         
+      </header>
+      <div className="sticky top-0 z-50">
+      {/* Main Header */}
+        <div className="w-full bg-white shadow-md   px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
           
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-yellow-500">
@@ -70,8 +74,7 @@ function Header() {
             </Link>
           </div>
         </div>
-         
-       <nav className="bg-yellow-400 shadow-md  container mx-auto">
+      <nav className='sticky top-0 z-50 bg-yellow-400 shadow-md w-full'>
       <div className="container mx-auto w-full px-2  py-3 flex justify-between items-center">
         <div className="w-1/4 flex items-center justify-center p-2">
         <Select className=' border-none ' >
@@ -117,8 +120,7 @@ function Header() {
         </div>
       </div>
     </nav>
-         
-      </header>
+    </div>
     </>
   );
 }

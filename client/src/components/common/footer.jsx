@@ -43,11 +43,11 @@ const Footer = () => {
     </div>
 
     {/* Right: Contact */}
-    <div >
+    <div  >
       <h3 className="text-lg font-semibold mb-1">Contact</h3>
       <p className="text-sm text-gray-300">📍 Addis Ababa, Ethiopia</p>
       <p className="text-sm text-gray-300">📞 +251 912 345 678</p>
-      <p className="text-sm text-gray-300">✉️ brukstore@gmail.com</p>
+      <p className="text-sm text-gray-300">✉️ birukstore@gmail.com</p>
     </div>
 
   </div>
