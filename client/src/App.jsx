@@ -19,6 +19,7 @@ import UnAuthPage from "./pages/unauth-page"
 import Header from "./components/common/header"
 import Footer from "./components/common/footer"
 import Home from "./pages/home-view"
+ 
 
 function App() {
     
@@ -26,14 +27,15 @@ function App() {
    const user={
       name:"Yared ",
       role:"user"};
-
+   
   return (
      <div className="flex flex-col  bg-white">
         {/* common components */}
            <Header/>
             
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path={"/"} element={<Home />} /> 
+          <Route path={"/home"} element={<Home />} />
           <Route path="/auth" element={
             <CheckAuth isAuthenticated={isAuthenticated} user={user}>
             <AuthLayout />
