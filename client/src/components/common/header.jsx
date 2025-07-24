@@ -12,7 +12,7 @@ function Header() {
     <>
       {/* Top Notice Bar */}
       <header className=  "w-full  bg-gray-100 shadow-sm ">
-        <div className="flex flex-col md:flex-row items-center justify-between px-6 py-5 text-sm text-gray-700">
+        <div className="flex flex-col md:flex-row items-center justify-between px-6 py-1 text-sm text-gray-700">
           <div>
             <p className='text-2xl font-bold'>
               Welcome to our Store,
@@ -33,7 +33,7 @@ function Header() {
       </header>
       <div className="sticky top-0 z-50">
       {/* Main Header */}
-        <div className="w-full bg-white shadow-md   px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="w-full bg-white shadow-md   px-6 py-2 flex flex-col md:flex-row items-center justify-between gap-4">
           
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-yellow-500">
@@ -62,7 +62,7 @@ function Header() {
           <div className="flex items-center gap-6 text-gray-700 text-sm">
             <Link to="/wishlist" className="flex items-center gap-1 hover:text-yellow-600">
               <Heart size={20} />
-              Wishlist
+               Wishlist
             </Link>
             <Link to="/compare" className="flex items-center gap-1 hover:text-yellow-600">
               <Scale size={20} />
@@ -75,7 +75,7 @@ function Header() {
           </div>
         </div>
       <nav className='sticky top-0 z-50 bg-yellow-400 shadow-md w-full'>
-      <div className="container mx-auto w-full px-2  py-3 flex justify-between items-center">
+      <div className="container mx-auto w-full px-2  py-1 flex justify-between items-center">
         <div className="w-1/4 flex items-center justify-center p-2">
         <Select className=' border-none ' >
     <SelectTrigger className=" text-md text-bold w-3/4 py-2 bg-white text-gray-700 hover:bg-yellow-50 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500">
