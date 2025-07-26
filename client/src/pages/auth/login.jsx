@@ -9,7 +9,7 @@ import { useToast } from "@/hooks/use-toast"
 
 const initialState = {
     email: "",
-    password : "",
+    password: "",
 } 
 
 function AuthLogin() {

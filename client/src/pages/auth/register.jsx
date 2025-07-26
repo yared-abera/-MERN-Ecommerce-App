@@ -22,10 +22,13 @@ function AuthRegister() {
   
    function onSubmit(event) {
       event.preventDefault();
+      console.log("Form submitted with data:", formData);
+
       dispatch(registerUser(formData)).then((data)=> 
       {
       console.log("registerUser",data);
         if(data.payload.success){
+
           toast({ 
             title: data.payload.message
                   
