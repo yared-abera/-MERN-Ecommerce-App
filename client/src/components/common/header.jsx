@@ -24,7 +24,7 @@ function Header() {
           </div>
           <div className="flex gap-4 mt-2 md:mt-0">
              <Link to="#" className="text-blue-600 hover:underline text-md">Track Order</Link>
-             <Link to="#" className="flex text-blue-600 hover:underline text-md gap-1"><User size={18} /> Account</Link> 
+             <Link to="auth/login" className="flex text-blue-600 hover:underline text-md gap-1"><User size={18} /> Sign In /Sign Up</Link> 
           </div>
         </div>
 
@@ -33,7 +33,7 @@ function Header() {
       </header>
       <div className="sticky top-0 z-50">
       {/* Main Header */}
-        <div className="w-full bg-white shadow-md   px-6 py-2 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="w-full bg-white shadow-md px-6 py-2 flex flex-col md:flex-row items-center justify-between gap-4">
           
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-yellow-500">

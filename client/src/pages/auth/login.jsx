@@ -1,23 +1,48 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import CommonForm from "../../components/common/form"
 import { loginFormControls } from "../../config/index"
-
+import { useDispatch } from "react-redux"
+import { loginUser } from "../../store/auth-slice/index"
+import { useToast } from "@/hooks/use-toast"
+ 
 
 const initialState = {
-    userName: "",
+    email: "",
     password : "",
 } 
 
 function AuthLogin() {
-
+    const dispatch = useDispatch();
+    const { toast } = useToast();
+    const navigate = useNavigate();
+    
   const [formData, setFormData] = useState(initialState);
-  
-   function onSubmit() {
+    
+   function onSubmit(event) {
+        event.preventDefault();
+        // Log the form data to the console for debugging
+    console.log("Form submitted with data:", formData);
+     dispatch(loginUser(formData)).then((response) => {
+        console.log("loginUser response", response);
+        
+        if (response.payload.success) {
+            toast({
+                title: response.payload.message
+            });
+            navigate("/shop");
+        } else {
+            toast({
+                title: "Login failed",
+                description: response.payload.message,
+                variant: "destructive"
+            });
+        }
+     });}
      
-  }
+  
 
-    return (
+ return (
 
         <div className="mx-auto w-full max-w-md space-y-6">
          <div className="text-center">

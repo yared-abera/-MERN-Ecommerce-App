@@ -19,14 +19,12 @@ import UnAuthPage from "./pages/unauth-page"
 import Header from "./components/common/header"
 import Footer from "./components/common/footer"
 import Home from "./pages/home-view"
+import { useSelector } from "react-redux"
  
 
 function App() {
     
-   const isAuthenticated=false;
-   const user={
-      name:"Yared ",
-      role:"user"};
+    const { isAuthenticated, user } = useSelector((state) => state.auth);
    
   return (
      <div className="flex flex-col  bg-white">

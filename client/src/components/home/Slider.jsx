@@ -16,12 +16,12 @@ export default function Slider() {
   useEffect(() => {
     if (!api || isHovered) return
 
-    const interval = setInterval(() => {
-      const count = api.scrollSnapList().length
-      const current = api.selectedScrollSnap()
-      const nextIndex = (current + 1) % count
-      api.scrollTo(nextIndex)
-    }, 3000)
+   const interval = setInterval(() => {
+   const count = api.scrollSnapList().length
+   const current = api.selectedScrollSnap()
+   const nextIndex = (current + 1) % count
+          api.scrollTo(nextIndex)
+        }, 3000)
 
     return () => clearInterval(interval)
   }, [api, isHovered])
