@@ -5,7 +5,8 @@ import { registerFormControls } from "../../config/index"
 import { useDispatch } from "react-redux"
 import { registerUser } from "../../store/auth-slice/index"
 import { useToast } from "@/hooks/use-toast"
- 
+
+
 
 const initialState = {
     userName : "",
@@ -14,7 +15,7 @@ const initialState = {
 } 
 
 function AuthRegister() {
-
+   
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,8 +23,8 @@ function AuthRegister() {
   
    function onSubmit(event) {
       event.preventDefault();
-      console.log("Form submitted with data:", formData);
-
+      
+      
       dispatch(registerUser(formData)).then((data)=> 
       {
       console.log("registerUser",data);

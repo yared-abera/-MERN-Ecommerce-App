@@ -25,11 +25,13 @@ import { useSelector } from "react-redux"
 function App() {
     
     const { isAuthenticated, user } = useSelector((state) => state.auth);
+
+    
    
   return (
      <div className="flex flex-col  bg-white">
         {/* common components */}
-           <Header/>
+           {/* <Header/> */}
             
         <Routes>
           <Route path={"/"} element={<Home />} /> 
@@ -44,11 +46,12 @@ function App() {
           <Route path="register" element={<AuthRegister />} /> 
          </Route>
          
-        <Route path="/admin" element=
-        { 
-          <CheckAuth  isAuthenticated={isAuthenticated} user={user}>
-          <AdminLayout />
-          </CheckAuth>
+          <Route path="/admin" element=
+        {  
+           <AdminLayout />
+          //  <CheckAuth  isAuthenticated={isAuthenticated} user={user}>
+           
+          // </CheckAuth>
         } >
            <Route path="dashboard" element={<AdminDashboard/>} />
            <Route path="orders" element={<AdminOrders />} />

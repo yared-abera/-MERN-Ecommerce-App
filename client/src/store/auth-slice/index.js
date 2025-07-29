@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import  axios from "axios";
+import { act } from "react";
 
 const initialState = {
      isAuthenticated: false,
@@ -40,6 +41,28 @@ export const registerUser = createAsyncThunk(
   }
 );
 
+export const logoutUser= createAsyncThunk("auth/logout", async()=>{
+  const response= await axios.post("http://localhost:5000/api/auth/logout",{},{
+    withCredentials: true,
+  }); 
+
+  return response.data;
+});
+
+export const checkAuth = createAsyncThunk(
+  "auth/checkAuth",
+  async () => {
+     
+      const response = await axios.get("http://localhost:5000/api/auth/check", {
+        withCredentials: true,
+        headers:{
+          "Cache-Control": "no-cache,no-store,must-revalidate,proxy-revalidate",
+        }
+      });
+      return response.data;
+    
+  });
+
       
      
 
@@ -49,7 +72,7 @@ const authSlice = createSlice({
      reducers: {
          setUser: (state, action) => {
              
-         },
+         }},
      
      extraReducers: (builder) => {
          builder.addCase(registerUser.pending, (state) => {
@@ -72,13 +95,27 @@ const authSlice = createSlice({
                 state.isLoading = false;
                 state.isAuthenticated = false;
                 state.user = null;
-            } );
-
-     }
-
-        
-     }
-    
+            } ).addCase(logoutUser.pending, (state) => {
+                state.isLoading = true;
+            }).addCase(logoutUser.fulfilled, (state) => {
+                state.isLoading = false;
+                state.isAuthenticated = false;
+                state.user = null;
+            }).addCase(checkAuth.pending, (state) => {
+                state.isLoading =true;
+                
+            }).addCase(checkAuth.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.user = action.payload.success ? action.payload.user : null;
+                state.isAuthenticated = action.payload.success;
+            }).addCase(checkAuth.rejected, (state) => {
+                state.isLoading = false;
+                state.user = null;
+                state.isAuthenticated = false;
+            });
+         
+     },
+     
     }
 
 );
