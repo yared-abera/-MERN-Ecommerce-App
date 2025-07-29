@@ -31,11 +31,15 @@ function AuthRegister() {
         if(data.payload.success){
 
           toast({ 
-            title: data.payload.message
-                  
+            title: data.payload.message,       
            });
           navigate("/auth/login");
-        } 
+        }else{
+          toast({
+            title: data.payload.message,
+            variant: "destructive",
+          });
+        }
       }
       
       

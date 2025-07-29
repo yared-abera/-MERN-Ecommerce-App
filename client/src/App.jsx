@@ -19,23 +19,47 @@ import UnAuthPage from "./pages/unauth-page"
 import Header from "./components/common/header"
 import Footer from "./components/common/footer"
 import Home from "./pages/home-view"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { use } from "react"
+import { checkAuth } from "./store/auth-slice"
+import { useEffect } from "react";
+import { Skeleton } from "./components/ui/skeleton";
  
 
 function App() {
     
-    const { isAuthenticated, user } = useSelector((state) => state.auth);
+    const { isAuthenticated, user, isLoading } = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
 
-    
+    useEffect(
+       ()=>{
+       dispatch(checkAuth());
+      }
+      , [dispatch]
+    );
+
+    if (isLoading) return <Skeleton className="w-screen h-screen bg-gray-700 flex items-center justify-center" />;
+
+  console.log(isLoading, user);
    
   return (
      <div className="flex flex-col  bg-white">
         {/* common components */}
-           {/* <Header/> */}
+               <Header/>
             
         <Routes>
-          <Route path={"/"} element={<Home />} /> 
-          <Route path={"/home"} element={<Home />} />
+          <Route path={"/"} element={
+            <CheckAuth isAuthenticated={isAuthenticated} user={user} isGuest={!isAuthenticated}>
+            <Home />
+            </CheckAuth>
+         } /> 
+          <Route path={"/home"} element={
+            <CheckAuth isAuthenticated={isAuthenticated} user={user} isGuest={!isAuthenticated}>
+            <Home />
+            </CheckAuth>
+            
+            
+            } />
           <Route path="/auth" element={
             <CheckAuth isAuthenticated={isAuthenticated} user={user}>
             <AuthLayout />
@@ -48,10 +72,10 @@ function App() {
          
           <Route path="/admin" element=
         {  
+
+            <CheckAuth  isAuthenticated={isAuthenticated} user={user}>
            <AdminLayout />
-          //  <CheckAuth  isAuthenticated={isAuthenticated} user={user}>
-           
-          // </CheckAuth>
+           </CheckAuth>
         } >
            <Route path="dashboard" element={<AdminDashboard/>} />
            <Route path="orders" element={<AdminOrders />} />

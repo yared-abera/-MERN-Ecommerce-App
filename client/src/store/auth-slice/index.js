@@ -4,26 +4,30 @@ import { act } from "react";
 
 const initialState = {
      isAuthenticated: false,
-     isLoading: false,
+     isLoading:true,
      user: null,
 };
 
 
 export const registerUser = createAsyncThunk(
      "auth/register",
-     async (formData) => {
-        
+     async (formData, {rejectWithValue}) => {
+       try{ 
        const response= await axios.post('http://localhost:5000/api/auth/register',
         formData,
         {
            withCredentials: true,
         }
        );
-
+       
        return response.data;
+      }catch(error) {
+         return rejectWithValue(error.response?.data);
+      }
          
      }
-)
+);
+
 
  export const loginUser = createAsyncThunk(
   "auth/login",
