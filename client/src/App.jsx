@@ -20,7 +20,7 @@ import Header from "./components/common/header"
 import Footer from "./components/common/footer"
 import Home from "./pages/home-view"
 import { useDispatch, useSelector } from "react-redux"
-import { use } from "react"
+ 
 import { checkAuth } from "./store/auth-slice"
 import { useEffect } from "react";
 import { Skeleton } from "./components/ui/skeleton";
@@ -33,7 +33,8 @@ function App() {
 
     useEffect(
        ()=>{
-       dispatch(checkAuth());
+       
+        dispatch(checkAuth());
       }
       , [dispatch]
     );
@@ -45,7 +46,7 @@ function App() {
   return (
      <div className="flex flex-col  bg-white">
         {/* common components */}
-               <Header/>
+             { (user)&&(user.role==="admin")?null:<Header/> } 
             
         <Routes>
           <Route path={"/"} element={
@@ -57,8 +58,6 @@ function App() {
             <CheckAuth isAuthenticated={isAuthenticated} user={user} isGuest={!isAuthenticated}>
             <Home />
             </CheckAuth>
-            
-            
             } />
           <Route path="/auth" element={
             <CheckAuth isAuthenticated={isAuthenticated} user={user}>
@@ -72,7 +71,6 @@ function App() {
          
           <Route path="/admin" element=
         {  
-
             <CheckAuth  isAuthenticated={isAuthenticated} user={user}>
            <AdminLayout />
            </CheckAuth>
@@ -99,7 +97,7 @@ function App() {
        <Route path="/unauth-page" element={< UnAuthPage/>} />
            
         </Routes>
-        <Footer/>
+        { user&&user.role==="admin"?null: <Footer/>} 
      </div>
   )
 }
