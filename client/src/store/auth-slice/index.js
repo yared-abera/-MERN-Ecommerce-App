@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import  axios from "axios";
-import { act } from "react";
+ 
 
 const initialState = {
      isAuthenticated: false,

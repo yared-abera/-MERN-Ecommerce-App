@@ -81,7 +81,7 @@ function App() {
            <Route path="features" element={<AdminFeatures />} />
            <Route path="*" element={<NotFound />} />
         </Route>
-        
+         
         <Route path="/shop" element={
          <CheckAuth isAuthenticated={isAuthenticated} user={user}>
           <ShoppingLayout/>

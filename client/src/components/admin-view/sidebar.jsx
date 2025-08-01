@@ -58,7 +58,7 @@ function AdminSidebar({ open, setOpen }) {
     <Fragment>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="left" className="w-64">
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full shadow-lg shadow-slate-500">
             <SheetHeader className="border-b">
               <SheetTitle className="flex gap-2 mt-5 mb-5">
                 <ChartNoAxesCombined size={30} />
@@ -69,7 +69,7 @@ function AdminSidebar({ open, setOpen }) {
           </div>
         </SheetContent>
       </Sheet>
-      <aside className="hidden w-64 flex-col border-r bg-background p-6 lg:flex">
+      <aside className="hidden w-64 flex-col border-r bg-background p-6 lg:flex shadow-lg">
         <div
           onClick={() => navigate("/admin/dashboard")}
           className="flex cursor-pointer  items-center border-b-2 py-2 gap-2"
