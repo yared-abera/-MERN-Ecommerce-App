@@ -42,8 +42,8 @@ import { Button } from '../ui/button';
             <SelectContent>
                {
                 getControlItem.options &&
-                getControlItem.option.length>0 ?
-                getControlItem.option.map(optionItem=> <SelectItem key={optionItem.id} value={optionItem.id}>{optionItem.label}</SelectItem> ):null
+                getControlItem.options.length>0 ?
+                getControlItem.options.map(optionItem=> <SelectItem key={optionItem.id} value={optionItem.id}>{optionItem.label}</SelectItem> ):null
                }
             </SelectContent>
 
@@ -96,8 +96,9 @@ import { Button } from '../ui/button';
          { formControls.map(controlItem=> <div className='grid w-full gap-1.5 '>
            <Label className="mb-1">{controlItem.label}</Label>
             {
-               renderInputByComponentType(controlItem)
-            }
+            
+            renderInputByComponentType(controlItem)
+           }
          </div>)}
         </div> 
         <Button type="submit" className="mt-4 w-full">{buttonText || "Submit"}</Button> 
