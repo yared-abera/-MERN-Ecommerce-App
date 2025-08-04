@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from '../ui/sheet'
 import {laptopFormControls} from '@/config'
 import CommonForm from '../common/form' 
 import { useState } from 'react'
-
+import ImageUpload from './imageUpload'
 
 const initialLaptopFormData = {
   model: '',
@@ -33,7 +33,7 @@ const AddProduct = ({open,setOpen}) => {
   const [formData, setFormData] =useState(initialLaptopFormData);
 
   return (
-      
+       
       <Sheet open={open} onOpenChange={ () => {
         setOpen(false);
       }}   >
@@ -42,6 +42,9 @@ const AddProduct = ({open,setOpen}) => {
           <SheetHeader>
            <SheetTitle>Add New Product</SheetTitle>
           </SheetHeader>
+          
+        <ImageUpload />
+
           <div className="p-4">
             <CommonForm
              formControls={laptopFormControls}

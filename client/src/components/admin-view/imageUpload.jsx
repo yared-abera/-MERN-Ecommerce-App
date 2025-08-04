@@ -1,13 +1,17 @@
 import React from 'react'
+import { Input } from '../ui/input'
 
-const imageUpload = () => {
+const ImageUpload = () => {
   return (
    
      <div>
-       
+        <Input
+         type="file" 
+         
+         />
 
      </div>
   )
 }
 
-export default imageUpload
+export default ImageUpload
