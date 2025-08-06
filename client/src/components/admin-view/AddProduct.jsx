@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from '../ui/sheet'
 import {laptopFormControls} from '@/config'
 import CommonForm from '../common/form' 
 import { useState } from 'react'
-import ImageUpload from './imageUpload'
+import ProductImageUpload from './imageUpload'
 
 const initialLaptopFormData = {
   model: '',
@@ -31,19 +31,27 @@ function onSubmit(event) {
 const AddProduct = ({open,setOpen}) => {
 
   const [formData, setFormData] =useState(initialLaptopFormData);
+  const [imageFile, setImageFile] = useState(null);
+  const [uploadedImageUrl, setUploadedImageUrl] = useState('');
 
   return (
        
       <Sheet open={open} onOpenChange={ () => {
         setOpen(false);
-      }}   >
+      }} 
+    >
         
         <SheetContent className='overflow-auto'>
           <SheetHeader>
            <SheetTitle>Add New Product</SheetTitle>
           </SheetHeader>
           
-        <ImageUpload />
+        <ProductImageUpload 
+        imageFile={imageFile}
+        setImageFile={setImageFile}
+        uploadedImageUrl={uploadedImageUrl}
+        setUploadedImageUrl={setUploadedImageUrl}
+        />
 
           <div className="p-4">
             <CommonForm
