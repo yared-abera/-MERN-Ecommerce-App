@@ -63,33 +63,33 @@ export const laptopFormControls = [
     componentType: 'select',
     options: [
       // Acer
-      { id: 'Acer Aspire', label: 'Acer Aspire' },
-      { id: 'Acer Predator', label: 'Acer Predator (gaming laptops)' },
-      { id: 'Acer Swift', label: 'Acer Swift' },
+      { id: 'Acer Aspire', label: 'Acer Aspire', brand: 'Acer' },
+      { id: 'Acer Predator', label: 'Acer Predator (gaming laptops)', brand : 'Acer' },
+      { id: 'Acer Swift', label: 'Acer Swift' ,brand : 'Acer'},
       // Apple
-      { id: 'MacBook Air', label: 'MacBook Air' },
-      { id: 'MacBook Pro', label: 'MacBook Pro' },
+      { id: 'MacBook Air', label: 'MacBook Air' , brand : 'Apple'},
+      { id: 'MacBook Pro', label: 'MacBook Pro' , brand : 'Apple'},
       // Asus
-      { id: 'Asus ROG', label: 'Asus ROG (Republic of Gamers)' },
-      { id: 'Asus VivoBook', label: 'Asus VivoBook' },
-      { id: 'Asus ZenBook', label: 'Asus ZenBook' },
+      { id: 'Asus ROG', label: 'Asus ROG (Republic of Gamers)' , brand : 'Asus'},
+      { id: 'Asus VivoBook', label: 'Asus VivoBook', brand : 'Asus'},
+      { id: 'Asus ZenBook', label: 'Asus ZenBook' ,brand : 'Asus'},
       // Dell
-      { id: 'Alienware', label: 'Alienware' },
-      { id: 'Inspiron 13', label: 'Inspiron 13' },
-      { id: 'Inspiron 15', label: 'Inspiron 15' },
-      { id: 'Ryzen', label: 'Ryzen' },
-      { id: 'XPS 13', label: 'XPS 13' },
-      { id: 'XPS 15', label: 'XPS 15' },
-      { id: 'XPS 2', label: 'XPS 2' },
+      { id: 'Alienware', label: 'Alienware' , brand : 'Dell'},
+      { id: 'Inspiron 13', label: 'Inspiron 13' , brand : 'Dell'},
+      { id: 'Inspiron 15', label: 'Inspiron 15' , brand : 'Dell'},
+      { id: 'Ryzen', label: 'Ryzen' , brand : 'Dell'},
+      { id: 'XPS 13', label: 'XPS 13' , brand : 'Dell'},
+      { id: 'XPS 15', label: 'XPS 15' , brand : 'Dell'},
+      { id: 'XPS 2', label: 'XPS 2' , brand: 'Dell'},
       // HP
-      { id: 'HP Envy', label: 'HP Envy' },
-      { id: 'HP Pavilion', label: 'HP Pavilion' },
-      { id: 'HP Spectre', label: 'HP Spectre' },
-      { id: 'Omen', label: 'Omen' },
-      { id: 'Victus', label: 'Victus' },
-      { id: 'ZBook', label: 'ZBook' },
+      { id: 'HP Envy', label: 'HP Envy' , brand : 'HP'},
+      { id: 'HP Pavilion', label: 'HP Pavilion' , brand : 'HP'},
+      { id: 'HP Spectre', label: 'HP Spectre' , brand : 'HP'},
+      { id: 'Omen', label: 'Omen' , brand : 'HP'},
+      { id: 'Victus', label: 'Victus' , brand : 'HP'},
+      { id: 'ZBook', label: 'ZBook' , brand : 'HP'},
       // Huawei
-      { id: 'Huawei MateBook', label: 'Huawei MateBook' }
+      { id: 'Huawei MateBook', label: 'Huawei MateBook' , brand : 'Huawei'},
     ]
   },
   
