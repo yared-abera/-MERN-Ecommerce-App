@@ -61,11 +61,13 @@ export const laptopFormControls = [
     label: 'Category',
     placeholder: 'Select a category',
     componentType: 'select',
+    
     options: [
+     
       // Acer
       { id: 'Acer Aspire', label: 'Acer Aspire', brand: 'Acer' },
       { id: 'Acer Predator', label: 'Acer Predator (gaming laptops)', brand : 'Acer' },
-      { id: 'Acer Swift', label: 'Acer Swift' ,brand : 'Acer'},
+      { id: 'Acer Swift', label: 'Acer Swift', brand : 'Acer'},
       // Apple
       { id: 'MacBook Air', label: 'MacBook Air' , brand : 'Apple'},
       { id: 'MacBook Pro', label: 'MacBook Pro' , brand : 'Apple'},
@@ -90,6 +92,34 @@ export const laptopFormControls = [
       { id: 'ZBook', label: 'ZBook' , brand : 'HP'},
       // Huawei
       { id: 'Huawei MateBook', label: 'Huawei MateBook' , brand : 'Huawei'},
+      // Lenovo
+    { id: 'Carbon, ThinkPad T-series', label: 'Carbon, ThinkPad T-series', brand: 'Lenovo' },
+    { id: 'IdeaPad', label: 'IdeaPad', brand: 'Lenovo' },
+    { id: 'ThinkPad', label: 'ThinkPad', brand: 'Lenovo' },
+    { id: 'Yoga', label: 'Yoga', brand: 'Lenovo' },
+
+    // Microsoft
+    { id: 'Microsoft Surface Laptop', label: 'Microsoft Surface Laptop', brand: 'Microsoft' },
+    { id: 'Microsoft Surface Pro', label: 'Microsoft Surface Pro', brand: 'Microsoft' },
+
+    // MSI
+    { id: 'MSI GE series', label: 'MSI GE series', brand: 'MSI' },
+    { id: 'MSI GS series', label: 'MSI GS series', brand: 'MSI' },
+    { id: 'MSI Prestige series', label: 'MSI Prestige series', brand: 'MSI' },
+
+    // Razer
+    { id: 'Razer Blade', label: 'Razer Blade', brand: 'Razer' },
+    { id: 'Razer Blade Stealth', label: 'Razer Blade Stealth', brand: 'Razer' },
+
+    // Samsung
+    { id: 'Chrome Book', label: 'Chrome Book', brand: 'Samsung' },
+    { id: 'Samsung Galaxy Book', label: 'Samsung Galaxy Book', brand: 'Samsung' },
+
+    // Lenovo
+    { id: 'ThinkPad', label: 'ThinkPad', brand: 'Lenovo' },
+    { id: 'IdeaPad', label: 'IdeaPad', brand: 'Lenovo' },
+    { id: 'Legion', label: 'Legion', brand: 'Lenovo' },
+    { id: 'Yoga', label: 'Yoga', brand: 'Lenovo' }
     ]
   },
   
@@ -101,6 +131,37 @@ export const laptopFormControls = [
     componentType: 'input',
   },
   {
+    name: 'color',
+    label: 'Color',
+    placeholder: 'Select a color',
+    componentType: 'select',
+    options: [
+    { id: 'Black', label: 'Black' },
+    { id: 'Silver', label: 'Silver' },
+    { id: 'Gray', label: 'Gray' },
+    { id: 'White', label: 'White' },
+    { id: 'Blue', label: 'Blue' },
+    { id: 'Red', label: 'Red' },
+    { id: 'Gold', label: 'Gold' },
+    { id: 'Rose Gold', label: 'Rose Gold' }
+    ]
+  },
+   {
+  name: 'type',
+  label: 'Type',
+  placeholder: 'Select a type',
+  componentType: 'select',
+  options: [
+    { id: 'Gaming', label: 'Gaming' },
+    { id: 'Business', label: 'Business' },
+    { id: 'Student', label: 'Student' },
+    { id: 'Ultrabook', label: 'Ultrabook' },
+    { id: 'Workstation', label: 'Workstation' },
+    { id: '2-in-1 Convertible', label: '2-in-1 Convertible' },
+    { id: 'Chromebook', label: 'Chromebook' }
+  ]
+}
+,  {
     name: 'quantity',
     label: 'Quantity',
     type: 'number',
@@ -166,9 +227,14 @@ export const laptopFormControls = [
   {
     name: 'condition',
     label: 'Condition',
-    type: 'text',
-    placeholder: 'e.g. Brand New',
-    componentType: 'input',
+    placeholder: 'Select a condition',
+    componentType: 'select',
+    options: [
+  { id: 'brand_new', label: 'Brand New' },
+  { id: 'used', label: 'Used' },
+  { id: 'refurbished', label: 'Refurbished' },
+  { id: 'open_box', label: 'Open Box' }
+]
   },
   {
     name: 'externalWebcam',

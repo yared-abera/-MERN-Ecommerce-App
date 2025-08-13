@@ -59,8 +59,7 @@ const AddProduct = ({open,setOpen}) => {
              formData={formData}
              setFormData={setFormData}
              onSubmit={onSubmit}
-             buttonText="Add Laptop"  
-             
+             buttonText="Add Laptop"    
             />
           </div>
         </SheetContent>

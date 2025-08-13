@@ -3,9 +3,12 @@ import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { Button } from '../ui/button';
+import { useState } from 'react';
 
  function CommonForm({formControls,formData,setFormData,onSubmit,buttonText}) {
   
+ const [ selectedBrand, setSelectedBrand] = useState('');
+
    function renderInputByComponentType(getControlItem)
    {
      let element=null;
@@ -28,23 +31,29 @@ import { Button } from '../ui/button';
           break;
           case "select":
          element= (
-              <Select value={value} onValueChange={(value)=>
+              <Select value={value} onValueChange={(value)=>{
               setFormData({
                ...formData,
                [getControlItem.name]:value
-               })
+               });
+                {getControlItem.name==="brand"?setSelectedBrand(value):null} ;
+            }
                } 
                >
             <SelectTrigger className="w-full">
             <SelectValue placeholder={getControlItem.placeholder}/>
-
+             
             </SelectTrigger>
             <SelectContent>
                {
                 getControlItem.options &&
                 getControlItem.options.length>0 ?
-                getControlItem.options.map(optionItem=> <SelectItem key={optionItem.id} value={optionItem.id}>{optionItem.label}</SelectItem> ):null
-               }
+                getControlItem.options.map((optionItem)=>{
+                  if(getControlItem.name==="category" && selectedBrand!=="")  
+                  return optionItem.brand===selectedBrand ? <SelectItem key={optionItem.id} value={optionItem.id}>{optionItem.label}</SelectItem> :null
+                  else return <SelectItem key={optionItem.id} value={optionItem.id}>{optionItem.label}</SelectItem> 
+                }):null
+                               }
             </SelectContent>
 
               </Select> 

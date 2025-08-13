@@ -22,17 +22,14 @@ const ProductImageUpload = (
    console.log("Image file changed", event.target.files);
    const selectedFile= event.target.files[0];
    if(selectedFile) setImageFile(selectedFile);
-
-
-
+ 
  }
 
  const imageRef= useRef(null);
 
  const handleOnDragOver = (event) => {
    event.preventDefault();
-
- }
+  }
 
   const handleOnDrop = (event) => {
    event.preventDefault();
@@ -61,7 +58,7 @@ async function uploadImageToCloudinary(file) {
 }
   
 useEffect(() => {
- 
+
 if(imageFile !== null) uploadImageToCloudinary(imageFile);
 
 },[imageFile]);
@@ -71,7 +68,7 @@ if(imageFile !== null) uploadImageToCloudinary(imageFile);
 
 
    return (
-  
+ 
   <Fragment>
    <div
    onDragOver={handleOnDragOver}
@@ -94,7 +91,6 @@ if(imageFile !== null) uploadImageToCloudinary(imageFile);
          <Label 
          className="text-sm text-gray-500 text-center"
          htmlFor="imageFile"
-         
          >    
          <UploadCloudIcon className="w-6 h-6 mx-auto mb-2" /> 
           Click or Drag and Drop to upload an image
