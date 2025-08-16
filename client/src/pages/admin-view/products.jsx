@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../../components/ui/button';
-import AddProduct from '@/components/admin-view/AddProduct';
+import AddProduct from '@/components/admin/AddProduct';
 import { useState } from 'react';
   
 
@@ -8,6 +8,9 @@ import { useState } from 'react';
 function AdminProducts() {
 
   const [openCreateProductsDialog, setOpenCreateProductsDialog] = useState(false);
+
+
+   
 
 
     return ( 
@@ -21,7 +24,7 @@ function AdminProducts() {
               <div className="flex justify-end gap-2 ">
                 
               <Button className="bg-yellow-600 p-2 mx-6 hover:bg-yellow-500 text-black text-md" 
-                 onClick={() => setOpenCreateProductsDialog(true)}
+                    onClick={() => setOpenCreateProductsDialog(true)}
                  >Add Laptop</Button>
               </div>
               <div className='flex flex-col gap-4'>

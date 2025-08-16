@@ -1,15 +1,19 @@
  
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '../ui/sheet'
 import {laptopFormControls} from '@/config'
 import CommonForm from '../common/form' 
 import { useState } from 'react'
 import ProductImageUpload from './imageUpload'
 
+import { useDispatch } from 'react-redux'
+import {AddNewLaptop} from '@/store/laptop-slice/index'
+
 const initialLaptopFormData = {
   model: '',
   quantity: '',
   processor: '',
+  price:'',
   screen: '',
   storage: '',
   ram: '',
@@ -20,19 +24,36 @@ const initialLaptopFormData = {
   condition: '',
   externalWebcam: '',
   brand: '',
-  category: ''
+  category: '',
+  color: '',
+  type: '',
+  imageUrl:''
 };
 
-function onSubmit(event) {
-  event.preventDefault();
- 
-}
+
 
 const AddProduct = ({open,setOpen}) => {
+
 
   const [formData, setFormData] =useState(initialLaptopFormData);
   const [imageFile, setImageFile] = useState(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState('');
+  const dispatch= useDispatch();
+
+
+ function onSubmit(event) {
+  event.preventDefault();
+  console.log("Form submitted with data to add laptop:", formData);
+      const  response= dispatch(AddNewLaptop(formData)); 
+
+  console.log(response);
+  
+}
+
+
+ 
+ 
+
 
   return (
        
@@ -56,7 +77,7 @@ const AddProduct = ({open,setOpen}) => {
           <div className="p-4">
             <CommonForm
              formControls={laptopFormControls}
-             formData={formData}
+             formData={{...formData,imageUrl:uploadedImageUrl}}
              setFormData={setFormData}
              onSubmit={onSubmit}
              buttonText="Add Laptop"    

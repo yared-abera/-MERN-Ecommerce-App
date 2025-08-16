@@ -29,6 +29,7 @@ const ProductImageUpload = (
 
  const handleOnDragOver = (event) => {
    event.preventDefault();
+  
   }
 
   const handleOnDrop = (event) => {
@@ -41,6 +42,7 @@ async function uploadImageToCloudinary(file) {
   const data = new FormData();  
   data.append('imageFile', file);
   
+
   try {
     const response= await axios.post('http://localhost:5000/api/admin/product/image-upload',
      data );
@@ -48,7 +50,9 @@ async function uploadImageToCloudinary(file) {
      console.log('response of image upload', response);
       
    if(response.data.success){
-     setUploadedImageUrl(response.data.url);   
+    
+    console.log("URL from response:", response.data.result?.secure_url);
+     setUploadedImageUrl(response.data.result.secure_url);   
    }
      
   } catch (error) {
@@ -63,8 +67,6 @@ if(imageFile !== null) uploadImageToCloudinary(imageFile);
 
 },[imageFile]);
                         
-
-
 
 
    return (

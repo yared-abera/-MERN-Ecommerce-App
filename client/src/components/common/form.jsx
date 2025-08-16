@@ -49,7 +49,7 @@ import { useState } from 'react';
                 getControlItem.options &&
                 getControlItem.options.length>0 ?
                 getControlItem.options.map((optionItem)=>{
-                  if(getControlItem.name==="category" && selectedBrand!=="")  
+                if(getControlItem.name==="category" && selectedBrand!=="")  
                   return optionItem.brand===selectedBrand ? <SelectItem key={optionItem.id} value={optionItem.id}>{optionItem.label}</SelectItem> :null
                   else return <SelectItem key={optionItem.id} value={optionItem.id}>{optionItem.label}</SelectItem> 
                 }):null

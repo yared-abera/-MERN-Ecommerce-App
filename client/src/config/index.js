@@ -42,7 +42,7 @@ export const loginFormControls=[
     ]
 
 export const laptopFormControls = [
-   {
+  {
     name: 'brand',
     label: 'Brand',
     placeholder: 'Select a brand',
@@ -130,6 +130,12 @@ export const laptopFormControls = [
     placeholder: 'e.g. HP ProBook 440 G9',
     componentType: 'input',
   },
+  { 
+   name: 'price',
+   label: 'Price',
+   type: Number,
+   placeholder: 'Enter Laptop Price'
+  },
   {
     name: 'color',
     label: 'Color',
@@ -146,7 +152,7 @@ export const laptopFormControls = [
     { id: 'Rose Gold', label: 'Rose Gold' }
     ]
   },
-   {
+ {
   name: 'type',
   label: 'Type',
   placeholder: 'Select a type',
