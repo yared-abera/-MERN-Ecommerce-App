@@ -1,24 +1,27 @@
 import React from 'react'
 import { Card, CardContent } from '../ui/card'
-
-const  AdminProductCard= (
+import { Button } from '../ui/button'
+const  AdminLaptopCard= (
    {
-    product
+     laptop
+
    }
     
 ) => {
   return (
-    <div>
-      <Card>
-       
-      <CardContent>
-      <div className='flex items-center justify-center rounded-md '>
-       <img className='h-40 w-40' src={product.image} alt="laptop image" />
-       <div>
-       <h1>{product.model}</h1>
-       <h1>{product.price}</h1>
-       </div>
-       
+    <div  >
+      <Card  >
+      <CardContent className='p-3 w-full  '>
+      <div className=' items-center justify-center align-center rounded-md w-full '>
+       <img className='h-40 w-40' src={ laptop.imageUrl} alt="laptop image" />
+       <div className='flex flex-col'>
+        <h1> <span className='font-bold text-lg text-blue-500'>{laptop.model} </span></h1>
+      <h1> Price : <span className='text-red-600 hover:text-yellow-700 hover:underline'>{laptop.price} ETB </span></h1>
+        </div>
+        <div className='flex  justify-between  '>
+        <Button className='mt-4 bg-blue-500'>Edit</Button>
+        <Button className='mt-4 bg-red-500'>Delete</Button>
+        </div>
       </div>
       </CardContent>
 
@@ -27,4 +30,4 @@ const  AdminProductCard= (
   )
 }
 
-export default AdminProductCard
+export default AdminLaptopCard

@@ -6,11 +6,13 @@ import { Button } from '../ui/button';
 import { useState } from 'react';
 
  function CommonForm({formControls,formData,setFormData,onSubmit,buttonText}) {
-  
- const [ selectedBrand, setSelectedBrand] = useState('');
+
+    const [ selectedBrand, setSelectedBrand] = useState('');
 
    function renderInputByComponentType(getControlItem)
    {
+
+      
      let element=null;
      const value= formData[getControlItem.name];
      switch(getControlItem.componentType){

@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 const initialState = {
-        laptops: [],
+        LaptopsList: [],
         isLoading: false,
         error: null
     };
@@ -34,7 +34,7 @@ const initialState = {
             { 
                 const response= await axios.get('http://localhost:5000/api/admin/product/get-all-laptops');
     
-                    return response;
+                    return response.data;
                     
             }
             catch(error){
@@ -54,8 +54,8 @@ const initialState = {
 
 
        
-    const laptopSlice = createSlice({
-        name: "laptops",
+    const adminLaptopSlice = createSlice({
+        name: "adminLaptops",
         initialState,
         reducers: {
             setState: (state, action) => {  
@@ -78,7 +78,7 @@ const initialState = {
             }).addCase(FetchAllLaptops.fulfilled, (state, action) => {
 
                 console.log("action.payload.data form FetchAllLaptops", action.payload.data);
-                state.laptops = action.payload.data;
+                state.LaptopsList = action.payload.data;
                 state.isLoading = false;
                 state.error = null;
             }).addCase(FetchAllLaptops.pending, (state) => {
@@ -87,9 +87,10 @@ const initialState = {
             }).addCase(FetchAllLaptops.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.error.message;
+                state.LaptopsList = [];
             })
         },
     });
 
-    export const { setState } = laptopSlice.actions;
-    export default laptopSlice.reducer;
+    export const { setState } = adminLaptopSlice.actions;
+    export default adminLaptopSlice.reducer;
