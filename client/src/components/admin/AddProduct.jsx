@@ -5,9 +5,11 @@ import {laptopFormControls} from '@/config'
 import CommonForm from '../common/form' 
 import { useState } from 'react'
 import ProductImageUpload from './imageUpload'
+ 
+
 
 import { useDispatch } from 'react-redux'
-import {AddNewLaptop} from '@/store/laptop-slice/index'
+import {AddNewLaptop,FetchAllLaptops } from '@/store/laptop-slice/index'
 
 const initialLaptopFormData = {
   model: '',
@@ -32,7 +34,7 @@ const initialLaptopFormData = {
 
 
 
-const AddProduct = ({open,setOpen}) => {
+const AddProduct = ({open,setOpen,}) => {
 
 
   const [formData, setFormData] =useState(initialLaptopFormData);
@@ -45,7 +47,7 @@ const AddProduct = ({open,setOpen}) => {
   event.preventDefault();
   console.log("Form submitted with data to add laptop:", formData);
       const  response= dispatch(AddNewLaptop(formData)); 
-
+      if(response.data.success)  dispatch(FetchAllLaptops());
   console.log(response);
   
 }

@@ -3,8 +3,9 @@ import { Card, CardContent } from '../ui/card'
 import { Button } from '../ui/button'
 const  AdminLaptopCard= (
    {
-     laptop
-
+    laptop,
+   setOpenEditLaptopsDialog,
+   setCurrentEditLaptopId
    }
     
 ) => {
@@ -19,7 +20,11 @@ const  AdminLaptopCard= (
       <h1> Price : <span className='text-red-600 hover:text-yellow-700 hover:underline'>{laptop.price} ETB </span></h1>
         </div>
         <div className='flex  justify-between  '>
-        <Button className='mt-4 bg-blue-500'>Edit</Button>
+        <Button onClick={()=>{
+          setOpenEditLaptopsDialog(true)
+          setCurrentEditLaptopId(laptop._id);
+
+        }}  className='mt-4 bg-blue-500' >Edit</Button>
         <Button className='mt-4 bg-red-500'>Delete</Button>
         </div>
       </div>
