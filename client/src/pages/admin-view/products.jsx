@@ -6,7 +6,7 @@ import AdminLaptopCard from '@/components/admin/product-tile';
 import { useEffect } from 'react';
 import { useDispatch ,useSelector } from 'react-redux';
 import { FetchAllLaptops } from '@/store/laptop-slice/index';
-import EditLaptop from '@/components/admin/EditLaptop';
+import EditLaptopComponent from '@/components/admin/EditLaptop';
 
 
 function AdminProducts() {
@@ -24,7 +24,7 @@ function AdminProducts() {
 
          <div className="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-lg">
           
-             <EditLaptop openDialog={openEditLaptopsDialog} 
+             <EditLaptopComponent openDialog={openEditLaptopsDialog} 
              setOpenDialog={setOpenEditLaptopsDialog} 
              currentEditLaptopId={currentEditLaptopId} />
              

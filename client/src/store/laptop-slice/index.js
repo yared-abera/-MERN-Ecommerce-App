@@ -46,6 +46,17 @@ const initialState = {
 
     );
 
+    export const EditLaptop= createAsyncThunk(
+        "edit/laptop", async({id,formData},{rejectWithValue})=>{
+            try{
+                const response= await axios.put(`http://localhost:5000/api/admin/product/update-laptop/${id}`,formData);
+                return response.data;
+            }
+            catch(error){
+                return rejectWithValue(error.response?.data);
+            }
+        });
+
 
     
     
