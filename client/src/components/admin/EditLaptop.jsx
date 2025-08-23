@@ -48,6 +48,7 @@ const onSubmit = (event) => {
   dispatch(EditLaptop({id:currentLaptop._id,formData}))
   .then(
     (response)=>{
+    console.log("response from EditLaptop action:", response);
       if(response.payload.success) {
         console.log("Laptop updated successfully");
         // Optionally, you can dispatch an action to refresh the laptop list

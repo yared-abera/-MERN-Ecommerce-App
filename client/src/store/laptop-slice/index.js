@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+ 
 
 
 const initialState = {
@@ -13,7 +14,7 @@ const initialState = {
         'laptops/addNewLaptop', async (form, { rejectWithValue }) => { 
            try
            { 
-            const response= await axios.post('http://localhost:5000/api/admin/product/add-new-laptop', form);
+          const response= await axios.post('http://localhost:5000/api/admin/product/add-new-laptop', form);
 
                 return response.data;
                 
@@ -57,14 +58,19 @@ const initialState = {
             }
         });
 
+    export const DeleteLaptop= createAsyncThunk(
+        "delete/laptop",async(id,{rejectWithValue})=>{
+            try{
+            const response= await axios.delete(`http://localhost:5000/api/admin/product/delete-laptop/${id}`);
+                return response.data;
+            }
+            catch(error){
+                return rejectWithValue(error.response?.data);
+            }
 
-    
-    
-    
+        });
 
-
-
-       
+        
     const adminLaptopSlice = createSlice({
         name: "adminLaptops",
         initialState,

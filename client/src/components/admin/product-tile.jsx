@@ -2,6 +2,8 @@ import React from 'react'
 import { Card, CardContent } from '../ui/card'
 import { Button } from '../ui/button'
 import ZoomImage from '../common/zoom-image'
+import { useDispatch } from 'react-redux'
+import { DeleteLaptop, FetchAllLaptops } from '@/store/laptop-slice/index'
 const  AdminLaptopCard= (
    {
    laptop,
@@ -11,6 +13,10 @@ const  AdminLaptopCard= (
   }
     
 ) => {
+
+  const dispatch= useDispatch();
+
+
   return (
     <div >
       <Card >
@@ -28,7 +34,21 @@ const  AdminLaptopCard= (
           setCurrentEditLaptopId(laptop._id);
           
         }}  className='mt-4 bg-blue-500' >Edit</Button>
-        <Button className='mt-4 bg-red-500'>Delete</Button>
+        <Button className='mt-4 bg-red-500'
+          onClick={()=>{
+             dispatch(DeleteLaptop(laptop._id))
+             .then((response)=>{
+              if(response.payload.success){
+                console.log("laptop deleted successfully");
+                dispatch(FetchAllLaptops());
+              } else {
+                console.error("Failed to delete laptop:", response.payload.message);
+              }
+             }    
+             )
+          }}
+        
+        >Delete</Button>
         </div>
       </div>
       </CardContent>
