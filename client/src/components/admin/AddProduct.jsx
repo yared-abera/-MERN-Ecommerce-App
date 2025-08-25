@@ -47,7 +47,8 @@ const AddProduct = ({open,setOpen,}) => {
   event.preventDefault();
   console.log("Form submitted with data to add laptop:", formData);
       const  response= dispatch(AddNewLaptop(formData)); 
-      if(response.data.success)  dispatch(FetchAllLaptops());
+       console.log("response from AddNewLaptop action:", response);
+      if(response.payload.success)  dispatch(FetchAllLaptops());
   console.log(response);
   
 }
