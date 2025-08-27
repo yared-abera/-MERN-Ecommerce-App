@@ -10,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { Button } from "../ui/button"
 
 export default function Slider() {
   const {LaptopsList}= useSelector((state) => state.adminLaptops);
@@ -48,7 +49,9 @@ export default function Slider() {
     setFilteredLaptops(filteredLaptops);}
      
 }, [LaptopsList]);
-  
+
+
+
   return (
     <div
       className="flex items-center justify-center lg:h-[250px]"
@@ -65,14 +68,37 @@ export default function Slider() {
       <CarouselItem key={index}>
         <div className="p-1">
           <Card>
-            <CardContent className="flex w-full  h-[250px] border-2 border-gray-200 items-center justify-center p-6">
-              {filteredLaptops[index] && filteredLaptops[index].imageUrl ? (
+            <CardContent className="flex w-full   h-[250px]  items-center  ">
+              {filteredLaptops[index] && filteredLaptops[index].imageUrl ? (  
+             <>
+             <div div className=" w-1/2 gap-1  p-2  flex items-end   border border-gray-300 flex-col  ">
+                <div className="text-center w-full">
+                  <h2 className="text-2xl   font-bold text-gray-700">
+                  {filteredLaptops[index].model}
+                </h2>
+                <p className="text-md   text-gray-600">
+                  Category: {filteredLaptops[index].category}
+                </p>
+                <p className="text-md   text-gray-600">
+                  Brand: {filteredLaptops[index].brand} 
+                  </p> 
+
+                <Button className="mt-4 bg-yellow-700 
+                w-1/2 text-bold text-white
+                 text-lg hover:bg-yellow-500
+                 hover:text-black
+                 transition duration-300
+                 shadow-lg
+                 transform hover:scale-105
+                 ">Buy Now</Button>
+                 </div>
+             </div>
                <img
              src={filteredLaptops[index].imageUrl}
           alt={`Laptop ${index + 1}`}
-       className="w-full h-auto max-h-[250px] object-contain transition-transform duration-300 hover:scale-105"
+           className="  rounded-md  max-h-[200px] object-contain transition-transform duration-300 hover:scale-90"
             />
-
+              </>
               ) : (
                 <div className="h-[250px] w-full flex items-center justify-center bg-gray-200 text-gray-500">
                   No Image

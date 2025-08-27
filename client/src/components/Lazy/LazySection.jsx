@@ -28,7 +28,7 @@ const LazySection = ({ children, sectionPath }) => {
           window.history.replaceState({},'','/home');
         }
       },
-      { threshold: 0.8 }
+      { threshold: 0.9 }
     );
 
     const current = ref.current;
